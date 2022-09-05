@@ -1,0 +1,134 @@
+:root {
+    --width: 625px; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Sora', sans-serif;
+    background-color:rgb(237, 237, 237) ;
+    height: 100vh;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.grid{
+    margin: 25px 0;
+    width: var(--width);
+    height: 625px;
+    display: grid;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;}
+
+.grid-element{
+    transition: all .25s;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+}
+.controls > * {
+    margin: 10px;
+}
+
+button {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  width: 125px;
+}
+
+button:hover,
+button:focus {
+  opacity: .75;
+}
+
+#color {
+    width: 125px;
+    min-height: 44px;
+}
+
+.range-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: var(--width);
+    cursor: pointer;
+    border-radius: 0;
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 40px;
+    background: #fff;
+    box-shadow: calc(var(--width) * -1) 0 0 var(--width) dodgerblue; /* 2 */
+    border: 2px solid #999;
+}
+
+#rangeLabel {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 818px) {
+    button,#color{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 657px) {
+    .grid{
+        height: 450px;
+    }
+    .grid,input[type="range"]{
+        width: 450px;
+    }
+    ::-webkit-slider-thumb {
+        box-shadow: -450px 0 0 450px dodgerblue; /* 2 */
+    }
+    .controls {
+        margin: 0 15px;
+    }
+}
+
